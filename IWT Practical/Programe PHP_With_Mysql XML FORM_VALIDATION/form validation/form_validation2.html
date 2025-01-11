@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <script type="text/javascript">
+    function verify()
+    {
+        var name = document.getElementById("name");
+        var gender = document.getElementsByName("gender");
+        var username = document.getElementById("username");
+        var password = document.getElementById("pass");
+        var msg = new Array();
+        var flag = 1;
+        var message = "Following Details are required \n";
+        var message2 = "Following Details are required \n";
+        <h3 id ="abc"></h3>
+        /*if(name.value ==  "")
+        {
+            alert("Name field is required");
+            return false;
+        }
+        if(username.value == "")
+        {
+            alert("Username is mandatory");
+            return false;
+        }*/
+        if(name.value=="")
+        {
+            msg[0] = "Name is required";
+            flag = 0;
+        } else { msg [0] = ""; }
+        if (gender[0].checked == false && gender[1].checked == false)
+        {
+            msg[1]= "select Gender";
+            flag = 0;
+        }else { msg[1] == ""; }
+        if (username.value == "")
+        {
+            msg[2] = "Username is required";
+            flag = 0;
+        } else { msg[2] = ""; }
+        if (pass.value == "" )
+        {
+            msg[3]="Password is required";
+            flag = 0;
+        }else { msg[3] = ""; }
+        if (pass.value.length < 8)
+        {
+            msg[4] = "Password must be 8 characters long";
+            flag = 0;
+        }else { msg[4] = ""; }
+        if (flag == 0)
+        {
+            //alert(msg[0]+'\n'+msg[1]+'\n'+msg[1]+'\n'+msg[2]+'\n'+msg[3]+'\n'+msg[4]);
+            for ( var x=0; x<=4; x++)
+            {
+                if(msg[x] != "")
+                {
+                    message += msg[x] + "\n";
+                    meaasge2 += msg[x] + "<br>";
+                }
+            }
+            alert(message);
+            document.getElementById("abc").innerHTML = message2;
+            return false;
+        }
+        else{
+            return true;
+        }
+    } 
+
+    </script>
+</head>
+<body>
+    <div align ="center">
+        <br/><br/>
+        <h1>Registration form</h1>
+        <form method ="post" action ="" onSubmit = "return verify()">
+            <table border = "1" cellspacing = "0" cellpadding = "10" >
+                <tr>
+                    <td colspan="2" align="center">*All Fields are mandatory</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td> <input type = "text" name="name" id="name" size="25" placeholder="Enter name"/></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female</td>
+                </tr>
+                <tr>
+                    <td>Username:</td>
+                    <td><input type="text" name="username" id="username" size="25" placeholder="Enter Uername" /></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="password" size="25" id="pass" placeholder="Enter password" /></td>
+                </tr>
+                <tr>
+                    <td align = "center" colspan="2">
+                        <input type="submit" value="Register" />
+                        <input type="reset" value="CLEAR" />
+                    </td>
+                </tr>
+
+
+            </table>
+            
+        </form> 
+    </div>
+</body>
+</html>

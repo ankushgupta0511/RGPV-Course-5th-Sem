@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="data1.xsl"?>
+<music>
+    <tracks>
+        <track>
+            <title>Ae mere watan ke logo</title>
+            <singer>Lata Mangeshkar</singer>
+        </track>
+    </tracks>
+</music>
+
